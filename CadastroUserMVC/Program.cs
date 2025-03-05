@@ -11,7 +11,7 @@ var app = builder.Build();
 var connectionString = builder.Configuration.GetConnectionString("DataBase");
 
 builder.Services.AddDbContext<BancoContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer("DataBase"));
     
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
