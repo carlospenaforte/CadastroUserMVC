@@ -8,10 +8,11 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-var connectionString = builder.Configuration.GetConnectionString("");
+var connectionString = builder.Configuration.GetConnectionString("DataBase");
+
 builder.Services.AddDbContext<BancoContext>(options =>
     options.UseSqlServer(connectionString));
-
+    
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
