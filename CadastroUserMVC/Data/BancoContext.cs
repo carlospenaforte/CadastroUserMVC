@@ -9,6 +9,6 @@ namespace CadastroUserMVC.Data
         {
         }
 
-        public DbSet<ContatoModel> Contatos { get; set; }
+        public DbSet<ContatoModel> Contatos { get; set; } = default!;
     }
 }

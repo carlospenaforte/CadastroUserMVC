@@ -11,8 +11,8 @@ var app = builder.Build();
 var connectionString = builder.Configuration.GetConnectionString("DataBase");
 
 builder.Services.AddDbContext<BancoContext>(options =>
-    options.UseSqlServer("DataBase"));
-    
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMovieContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesMovieContext' not found.")));
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
